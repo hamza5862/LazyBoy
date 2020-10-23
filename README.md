@@ -1,15 +1,19 @@
 # To add here. 
 
 - what it does.
+
 -files you would need.
 
 >how to install
 
-  *install prettytables() module* 
-   `$pip install pretty table`
-   `$python -m pip install --upgrade pip`
+  -*install prettytables() module* 
+   
+   -`$pip install pretty table`
+   
+   -`$python -m pip install --upgrade pip`
 
-for better experince:
+-for better experince:
+   
    -terminal size shoudl be 202x42
 
 
