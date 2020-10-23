@@ -83,17 +83,18 @@ def userinput():
     # if int(input()) < 
     pickattack(int(input()))
 
-    
 
 def pickattack(x):
     if x == 4:
         print("gets to if ststs")
         for i in range(3):
             allattacks(i+1)
-            # break 
-    else:
-        print("do better coding")
-        kindOfAttack(x)
+           # readfile()
+            
+	
+   # else:
+        #print("do better coding")
+       # kindOfAttack(x)
 
 def allattacks(x):
         print("hahaahaha"+ str(x))
@@ -103,16 +104,20 @@ def allattacks(x):
             fun.filename= "Local_file_inclusion_(LFI)"  # create a "summary file" 
             find = lfi
             readfile()
+            tables()
+
         elif x ==2 :
             rfi= "/?="
             fun.filename= "Remote File Inclusion (RFI)"    # modfi "summary file"
             find = rfi
             readfile()
+            tables()
         elif x ==3 :
             buffr= r"(\\x\D)"
             find = buffr
             fun.filename= "Buffer OverFlow Attack (BOF)"   # modify "summary file"    
             readfile()
+            tables()
         else:
             print ("dont be stupid !!!!!!")
             exit()
@@ -121,33 +126,33 @@ def allattacks(x):
         # readfile()
         
 # few attack types
-def kindOfAttack(x):
-    find=''
-    print ("Encoding the Input...")
+#def kindOfAttack(x):
+   # find=''
+  #  print ("Encoding the Input...")
 
-    if x ==1:
-        lfi= "/../../"
-        fun.filename= "Local_file_inclusion_(LFI)"  # create a "summary file" 
-        find = lfi
-    elif x ==2 :
-        rfi= "/?="
-        fun.filename= "Remote File Inclusion (RFI)"    # modfi "summary file"
-        find = rfi
-    elif x ==3 :
-        buffr= r"(\\x\D)"
-        find = buffr
-        fun.filename= "Buffer OverFlow Attack (BOF)"   # modify "summary file"    
-    else:
-        print ("dont be stupid !!!!!!")
-        exit()
-    fun.find_string = find
-    print(fun.filename)
-    readfile()
+   # if x ==1:
+       # lfi= "/../../"
+       # fun.filename= "Local_file_inclusion_(LFI)"  # create a "summary file" 
+     #   find = lfi
+   # elif x ==2 :
+       # rfi= "/?="
+       # fun.filename= "Remote File Inclusion (RFI)"    # modfi "summary file"
+#        find = rfi
+#    elif x ==3 :
+#        buffr= r"(\\x\D)"
+#        find = buffr
+#        fun.filename= "Buffer OverFlow Attack (BOF)"   # modify "summary file"    
+#    else:
+#        print ("dont be stupid !!!!!!")
+#        exit()
+#   # fun.find_string = find
+   # print(fun.filename)
+   # readfile()
     
 
 
 
-
+##
 # Import data from log file
 def readfile():
 
