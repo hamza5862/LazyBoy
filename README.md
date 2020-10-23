@@ -1,14 +1,18 @@
-# To add here.
+# To add here. 
 
 - what it does.
 -files you would need.
 
 >how to install
+
   *install prettytables() module* 
    `$pip install pretty table`
    `$python -m pip install --upgrade pip`
-  
-  
+
+for better experince:
+   -terminal size shoudl be 202x42
+
+
 -how to use LazyBoy (withExamples)
 
 LazyBoy is a convenient tool that takes web server logs (text files) and builds a data structure highlighting the types of attacks, the IP addresses affected, the source IP addresses all sorted in order based on occurences showing the user where the most attention is needed. LazyBoy also creates a file with the line numbers for all possible attacks so the user can manually investigate if needed. 
