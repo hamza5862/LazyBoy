@@ -6,6 +6,19 @@
 
 >how to install
 
+-#h1for Windows
+
+-visual studio code would work fine. 
+
+-If you dont have it you can go to python.org/downlaods
+
+ --Downlaod the latest python, its a lightweight software. should work for system32 as well. 
+ 
+ - Need to install prettytbales() in windows
+ - go to this link https://pypi.org/project/prettytable/
+
+ 
+
   -*install prettytables() module* 
    
    -`$pip install pretty table`
