@@ -1,13 +1,13 @@
 #!usr/bin/python3
 
-from os import confstr
+#from os import confstr
 import sys
 import re
 from re import X, findall, search
 from typing import Coroutine, Counter
-from heapq import nlargest 
+from heapq import nlargest
 from prettytable import PrettyTable
-import os 
+import os
 
 
 class fun:
@@ -52,10 +52,10 @@ def tables():
     x.field_names = ["Ip source Addesses","Ip dst Addesses", " dst Ports","Services", "Kind of Attacks", "Attack examples","Total Attacks"]
     print("Printing Report...")
     # for i in range(3):
-    x.add_row([fun.attackip[0],fun.attackdst[0],fun.attackport[0] , servers.services(fun.attackport[0]),fun.filename, fun.attacktype[0][5:100],' '])
-    x.add_row([fun.attackip[1],fun.attackdst[1],fun.attackport[1] , servers.services(fun.attackport[1]),fun.filename, fun.attacktype[1][5:100],fun.count])
-    x.add_row([fun.attackip[2],fun.attackdst[2],fun.attackport[2] , servers.services(fun.attackport[2]),fun.filename, fun.attacktype[2][5:100],' '])
-    print(x) 
+    x.add_row([fun.attackip[0],fun.attackdst[0],fun.attackport[0] , servers.services(fun.attackport[0]),fun.filename, fun.attacktype[0],' '])
+    x.add_row([fun.attackip[1],fun.attackdst[1],fun.attackport[1] , servers.services(fun.attackport[1]),fun.filename, fun.attacktype[1],fun.count])
+    x.add_row([fun.attackip[2],fun.attackdst[2],fun.attackport[2] , servers.services(fun.attackport[2]),fun.filename, fun.attacktype[2][0:5],' '])
+    print(x)
 
 
 
@@ -80,8 +80,9 @@ def userinput():
     # print(len(sys.argv))
     print("What kind of attack are you looking for? \n i.e: (1)LFI   -  (2)RFI - (3)BufferOverflow (4)All kind of attacks\n\n please input your chooice here: " )
     print("input recived...")
-    # if int(input()) < 
+    # if int(input()) <
     pickattack(int(input()))
+
 
 
 def pickattack(x):
@@ -89,70 +90,64 @@ def pickattack(x):
         print("gets to if ststs")
         for i in range(3):
             allattacks(i+1)
-           # readfile()
-            
-	
-   # else:
-        #print("do better coding")
-       # kindOfAttack(x)
+            # break
+    else:
+        print("do better coding")
+        kindOfAttack(x)
 
 def allattacks(x):
         print("hahaahaha"+ str(x))
         find=''
         if x ==1:
             lfi= "/../../"
-            fun.filename= "Local_file_inclusion_(LFI)"  # create a "summary file" 
+            fun.filename= "Local_file_inclusion_(LFI)"  # create a "summary file"
             find = lfi
             readfile()
-            tables()
-
         elif x ==2 :
             rfi= "/?="
             fun.filename= "Remote File Inclusion (RFI)"    # modfi "summary file"
             find = rfi
             readfile()
-            tables()
         elif x ==3 :
             buffr= r"(\\x\D)"
             find = buffr
-            fun.filename= "Buffer OverFlow Attack (BOF)"   # modify "summary file"    
+            fun.filename= "Buffer OverFlow Attack (BOF)"   # modify "summary file"
             readfile()
-            tables()
         else:
             print ("dont be stupid !!!!!!")
             exit()
         fun.find_string = find
         print(fun.filename)
         # readfile()
-        
+
 # few attack types
-#def kindOfAttack(x):
-   # find=''
-  #  print ("Encoding the Input...")
+def kindOfAttack(x):
+    find=''
+    print ("Encoding the Input...")
 
-   # if x ==1:
-       # lfi= "/../../"
-       # fun.filename= "Local_file_inclusion_(LFI)"  # create a "summary file" 
-     #   find = lfi
-   # elif x ==2 :
-       # rfi= "/?="
-       # fun.filename= "Remote File Inclusion (RFI)"    # modfi "summary file"
-#        find = rfi
-#    elif x ==3 :
-#        buffr= r"(\\x\D)"
-#        find = buffr
-#        fun.filename= "Buffer OverFlow Attack (BOF)"   # modify "summary file"    
-#    else:
-#        print ("dont be stupid !!!!!!")
-#        exit()
-#   # fun.find_string = find
-   # print(fun.filename)
-   # readfile()
-    
-
+    if x ==1:
+        lfi= "/../../"
+        fun.filename= "Local_file_inclusion_(LFI)"  # create a "summary file"
+        find = lfi
+    elif x ==2 :
+        rfi= "/?="
+        fun.filename= "Remote File Inclusion (RFI)"    # modfi "summary file"
+        find = rfi
+    elif x ==3 :
+        buffr= r"(\\x\D)"
+        find = buffr
+        fun.filename= "Buffer OverFlow Attack (BOF)"   # modify "summary file"
+    else:
+        print ("dont be stupid !!!!!!")
+        exit()
+    fun.find_string = find
+    print(fun.filename)
+    readfile()
 
 
-##
+
+
+
 # Import data from log file
 def readfile():
 
@@ -201,10 +196,10 @@ def word_count(str):
             counts[word] += 1
         else:
             counts[word] = 1
-    ThreeHighest = nlargest(3, counts, key = counts.get) 
-    return ThreeHighest 
-   
-    # for val in ThreeHighest: 
+    ThreeHighest = nlargest(3, counts, key = counts.get)
+    return ThreeHighest
+
+    # for val in ThreeHighest:
     #     print(val, ":", counts.get(val))
     #     x = counts.get(val)
     #     return x
@@ -218,11 +213,11 @@ def attackcount(str):
             counts[word] += 1
         else:
             counts[word] = 1
-    ThreeHighest = nlargest(3, counts, key = counts.get) 
-    for val in ThreeHighest: 
-        return str(counts.get(val)) 
-        
-    
+    ThreeHighest = nlargest(3, counts, key = counts.get)
+    for val in ThreeHighest:
+        return str(counts.get(val))
+
+
 
 
 def makefile():
@@ -231,18 +226,18 @@ def makefile():
 
     ipsrcfile = open(fun.filename, "a+")
     ipsrcfile.write("\n"+ str(fun.line_number))
-    ipsrcfile.close() 
+    ipsrcfile.close()
     print("File created. Closing it now")
 
 
 if len(sys.argv) > 1 :
-    
+
     fun.doc=str(sys.argv[1])
     print(sys.argv[0])
 
 
 else:
-    print 
+    print
     print("else statemetn")
     fun.doc="http1.log"
 
