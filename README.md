@@ -31,6 +31,8 @@ COMMAND LINE/COMMAND PROMPT
 Example: ./LazyBoy [http.log]
  
    -- This will then create a file in your directory. The name will be the same as the attack you are searching for
+   
    -- Example: Searching for a Local File Inclusion will generate a file named "Local File Inclusion"
-       -- When you search for all attacks, you will have a file created for each of the attacks
+   
+   -- When you search for all attacks, you will have a file created for each of the attacks
     
