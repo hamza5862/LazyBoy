@@ -1,4 +1,4 @@
-                                                               LazyBoy
+                                                    LazyBoy
 
 This is a convenient python script users can use to filter Local File Inclusion, Remote File Inclusion and Buffer Overflow attacks from a HTTP log file all in one execution or one at a time. The tool builds a data structure highlighting the types of attacks, the IP addresses affected, the source IP addresses all sorted in order based on occurences showing the user where the most attention is needed. LazyBoy also creates a file with the line numbers for all possible attacks so the user can manually investigate if needed. 
 
