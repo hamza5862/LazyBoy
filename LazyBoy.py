@@ -211,7 +211,7 @@ if len(sys.argv) > 1 :
 else:
     print
     print("else statemetn")
-    fun.doc="http1.log"
+    fun.doc="logs/http1.log"
 
 
 userinput()
