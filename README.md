@@ -28,7 +28,7 @@ COMMAND LINE/COMMAND PROMPT
 
 ./LazyBoy [logfile]
 
-Example: ./LazyBoy [http.log]
+Example: ./LazyBoy http.log
  
    -- This will then create a file in your directory. The name will be the same as the attack you are searching for
    
